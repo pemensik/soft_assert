@@ -1,0 +1,5 @@
+[requires]
+build = [ "dos2unix" ]
+
+[scripts.prep]
+post = [ "dos2unix README.MD src/lib.rs" ]

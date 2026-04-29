@@ -15,6 +15,7 @@ URL:            https://crates.io/crates/soft_assert
 Source:         %{crates_source}
 
 BuildRequires:  cargo-rpm-macros >= 24
+BuildRequires:  dos2unix
 
 %global _description %{expand:
 Non-panicking assertions.}
@@ -51,6 +52,7 @@ use the "default" feature of the "%{crate}" crate.
 %prep
 %autosetup -n %{crate}-%{version} -p1
 %cargo_prep
+dos2unix README.MD src/lib.rs
 
 %generate_buildrequires
 %cargo_generate_buildrequires
